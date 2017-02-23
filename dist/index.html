@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="playAroundApp">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Bloc Base Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div ng-controller="MainCtrl as main">
+    <div>
+      <p>{{ main.dogs.length }} Dogs available</p>
+    </div>
+    <button ng-click="main.removeFromStock()">Destroy first dog from list </button><br>
+
+    <input type="text" ng-model="main.dog">
+    <button ng-click="main.addDog(main.dog)">Add new dog</button>
+    <button ng-click="main.removeByAttr(main.dogs, 'name', main.dog)">Destroy specific dog</button>
+    <ul>
+      <li ng-repeat="item in main.items">
+        {{ item.name }}
+
+      </li>
+    </ul>
+    <div>
+      <ul>
+        <li ng-repeat="dog in main.dogs">
+          {{ dog.name }}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/services/UserService.js"></script>
+  <script src="/scripts/controllers/MainCtrl.js"></script>
+
+</body>
+</html>
